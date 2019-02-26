@@ -1,0 +1,17 @@
+const initialTime = + new Date()
+const Sketch = p => {
+  let gray = 0;
+  p.setup = () => {
+    p.createCanvas(1280, 800);
+  };
+
+  p.draw = () => {
+    for (let i = 0; i < 900; i++) {
+      let elapsedTime = (new Date() - initialTime) / 1000
+      console.log(elapsedTime)
+      p.ellipse(500 + 100 * Math.sin(i * 0.02 + elapsedTime), 50 + i, 50 + i, 50);
+    }
+  };
+};
+
+export default Sketch;

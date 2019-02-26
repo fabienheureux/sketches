@@ -1,0 +1,12 @@
+{
+  "name": "190225",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel --no-cache index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

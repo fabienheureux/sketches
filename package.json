@@ -18,10 +18,15 @@
   },
   "homepage": "https://github.com/fabienheureux/sketches#readme",
   "dependencies": {
+    "p5": "^0.7.3",
+    "reset-css": "^4.0.1",
     "three": "^0.101.1"
   },
   "devDependencies": {
+    "@types/p5": "^0.7.2",
+    "@types/three": "^0.93.22",
     "parcel-bundler": "^1.11.0",
+    "prettier": "^1.16.4",
     "typescript": "^3.3.3"
   }
 }
