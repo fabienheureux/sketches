@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <style>
+      body,
+      html {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="1280" height="900"></canvas>
+    <script>
+      const initialTime = new Date();
+      const vw = window.outerWidth;
+      const vh = window.outerHeight;
+
+      const canvas = document.querySelector("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const ball = {
+        x: 1280 / 2,
+        y: 0,
+        radius: 10,
+        color: "rgba(255, 255, 255, 0.3)",
+        draw: function() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        }
+      };
+
+      const draw = () => {
+        const elapsedTime = (new Date() - initialTime) / 1000;
+        ball.y > canvas.clientHeight ? (ball.y = 0) : (ball.y += 3);
+        // const r = 127 + 127 * Math.sin(Math.random() + elapsedTime);
+        // const g = 127 + 127 * Math.sin(Math.random() + elapsedTime);
+        // const b = 127 + 127 * Math.sin(Math.random() + elapsedTime);
+        // ball.color = "rgb(" + r + "," + g + "," + b + ")";
+        ball.x = ball.x + 10 * Math.sin(elapsedTime * (10 * Math.random()));
+        ball.draw();
+
+        window.requestAnimationFrame(draw);
+      };
+
+      const init = () => {
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, vw, vh);
+        ctx.save();
+        window.requestAnimationFrame(draw);
+      };
+      init();
+    </script>
+  </body>
+</html>
