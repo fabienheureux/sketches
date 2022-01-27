@@ -20,7 +20,7 @@
   "dependencies": {
     "p5": "^0.7.3",
     "reset-css": "^4.0.1",
-    "three": "^0.101.1"
+    "three": "^0.137.0"
   },
   "devDependencies": {
     "@types/p5": "^0.7.2",
